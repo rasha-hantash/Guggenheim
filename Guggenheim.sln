@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guggenheim", "Guggenheim\Guggenheim.csproj", "{503259D2-58EA-4F4C-A529-4309B93F7DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guggenheim.Tests", "Guggenheim.Tests\Guggenheim.Tests.csproj", "{2CFEE836-0F30-4468-B88D-A2144B6D1E6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{503259D2-58EA-4F4C-A529-4309B93F7DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{503259D2-58EA-4F4C-A529-4309B93F7DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{503259D2-58EA-4F4C-A529-4309B93F7DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{503259D2-58EA-4F4C-A529-4309B93F7DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CFEE836-0F30-4468-B88D-A2144B6D1E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CFEE836-0F30-4468-B88D-A2144B6D1E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CFEE836-0F30-4468-B88D-A2144B6D1E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CFEE836-0F30-4468-B88D-A2144B6D1E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
