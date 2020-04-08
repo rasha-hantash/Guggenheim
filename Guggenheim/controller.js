@@ -1,48 +1,27 @@
 ﻿angular.module("Guggenheim.controllers", []).
-    controller("SubmitFareController", function ($scope, FareService){
-        $scope.message = "Enter you details";
+    controller("SubmitFareController", function ( $scope, FareService){
+        
         
 
         $scope.SubmitFare = function () {
+            console.log("The request of the fare", $scope.fare);
             FareService.SubmitTaxiFare($scope.fare);
         }
     })
-    .factory("FareService", ['$http', function ($http) {
+    .factory("FareService", ['$http', '$q', function ($http, $q) {
         var oFare = {};
-        oFare.SubmitTaxiFare = function (fare)
-        {
+        oFare.SubmitTaxiFare = function (fare) {
+            var def = $q.defer();
             $http.post("/TaxiFare/SubmitFare", fare).then(function (response){
-                console.log(response.data);
-                alert(response.data.message);
+                console.log("The response of the fare", response.data);
+                alert("Your total fare on, " + response.data.Date + ", is " + response.data.Total);
+                def.resolve(response);
             })
+              .catch(function (err, status){
+                def.reject(err);
+                })
+            return def.promise;
         }
+
     return oFare;
     }])
-//app.controller('FareController', function ($scope, TaxiFareService) {
-//$scope.fare = {
-//    startFare: 3,
-//    minutes: "",
-//    miles: "",
-//    date: "",
-//    total: ""
-//};
-
-//$scope.submitFare = function () {
-//    //$http.post('/Index').then(function (response)){
-//    //    $scope.total = response.data.total;
-//    //}
-//    //alert("From Method Call" + scope.message);
-
-//    TaxiFareService.SubmitFare($scope.fare);
-//}
-//})
-//    .factory("TaxiFareService", ['$http', function ($http) {
-//    var totalFare = {};
-//    fare.SubmitFare = function (fare) {
-//        $http.post("/TaxiFare/SubmitFare", fare).success(function (response) {
-//            alert(response.data);
-//        })
-//    }
-
-//    return totalFare;
-//}]);
