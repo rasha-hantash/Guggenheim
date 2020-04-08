@@ -12,13 +12,14 @@ namespace Guggenheim.Controllers
     {
         public ActionResult SubmitFare(Fare fare)
         {
+            
             //Additional New York State surcharge
             fare.StartFare += .5;
 
             //Add fare when car is not in motion or traveling more than 6mph
             fare.StartFare += fare.Minutes * .35;
 
-            //Add fare for every one-fifth of a mile travelling less than 6mph
+            //Add fare for every one-fifth of a mile traveling less than 6mph
             fare.StartFare += (fare.Miles / .2) * .35;
 
 
@@ -26,13 +27,13 @@ namespace Guggenheim.Controllers
             DateTime d = DateTimeOffset.Parse(fare.Date).UtcDateTime;
 
 
-            //TODO: find out why all DateTime submitted by the user is 5 hours ahead.
-            d = d.AddHours(-5); //temporary fix
             fare.Date = d.ToString();
-
+            
             string[] dateArr = fare.Date.Split(' ');
+            string[] timeArr = dateArr[1].Split(':');
+            int hour = Int32.Parse(timeArr[0]);
 
-            int hour = Int32.Parse(dateArr[1].Substring(0, 1));
+
 
             //TODO: refactor into a method
             //Check for a night surcharge at PM
