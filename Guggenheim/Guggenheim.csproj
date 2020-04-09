@@ -66,6 +66,7 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="app\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -167,10 +168,11 @@
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="controller.js" />
     <Content Include="SubmitFare.html" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular-route.js" />
+    <Content Include="test\app.spec.js" />
+    <Content Include="app\controller.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
