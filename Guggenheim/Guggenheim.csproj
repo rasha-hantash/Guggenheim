@@ -173,6 +173,9 @@
     <Content Include="Scripts\angular-route.js" />
     <Content Include="test\app.spec.js" />
     <Content Include="app\controller.js" />
+    <Content Include="karma.conf.js" />
+    <Content Include="test\app.protractor.spec.js" />
+    <Content Include="protractor.conf.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -212,6 +215,8 @@
     <None Include="Content\bootstrap-grid.min.css.map" />
     <None Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\angular-route.min.js.map" />
+    <None Include="package-lock.json" />
+    <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
