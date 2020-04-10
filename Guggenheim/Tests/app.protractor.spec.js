@@ -1,4 +1,5 @@
 ﻿describe('angularjs homepage todo list', function () {
+
     it('should submit a fare with primary example', function () {
         browser.get('http://127.0.0.1:8080/#!/');
         element(by.id('minutes')).sendKeys(5);
@@ -14,6 +15,7 @@
         let ale = browser.switchTo().alert();
         ale.getText().then(function (message) {
             console.log("MSG is: " + message);
+            //check to see if expected value is recieve
             { expect(message.split(" ").splice(-1).toString()).toBe("$9.75") }
         });
         

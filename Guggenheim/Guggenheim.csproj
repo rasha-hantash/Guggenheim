@@ -66,7 +66,8 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
-    <Folder Include="app\" />
+    <Folder Include="App\" />
+    <Folder Include="Templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -77,7 +78,6 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="app.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -168,14 +168,15 @@
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="SubmitFare.html" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular-route.js" />
-    <Content Include="test\app.spec.js" />
-    <Content Include="app\controller.js" />
+    <Content Include="Tests\app.spec.js" />
+    <Content Include="App\controller.js" />
     <Content Include="karma.conf.js" />
-    <Content Include="test\app.protractor.spec.js" />
+    <Content Include="Tests\app.protractor.spec.js" />
     <Content Include="protractor.conf.js" />
+    <Content Include="Templates\SubmitFare.html" />
+    <Content Include="App\app.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

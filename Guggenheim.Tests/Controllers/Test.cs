@@ -30,8 +30,6 @@ namespace Guggenheim.Tests.Controllers
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
-            
-           //do a test for date that is displayed as well
         }
 
 
@@ -56,8 +54,6 @@ namespace Guggenheim.Tests.Controllers
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
-
-            //do a test for date that is displayed as well
         }
 
 
@@ -106,8 +102,6 @@ namespace Guggenheim.Tests.Controllers
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
-
-            //do a test for date that is displayed as well
         }
 
 
@@ -131,8 +125,6 @@ namespace Guggenheim.Tests.Controllers
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
-
-            //do a test for date that is displayed as well
         }
 
         [Test]
@@ -155,8 +147,6 @@ namespace Guggenheim.Tests.Controllers
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
-
-            //do a test for date that is displayed as well
         }
     }
 }
