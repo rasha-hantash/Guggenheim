@@ -1,4 +1,4 @@
-﻿<div class="container" ng-init="fare.StartFare=3">
+﻿<div class="container" style="margin-top: 5%" ng-init="fare.StartFare=3">
     <form name="SubmitFareForm" ng-submit="SubmitFare();">
         <div class="form-group">
             <label for="minutes">Minutes Traveling Above 6mph or Not In Motion</label>
@@ -12,7 +12,7 @@
             <label for="dateOfFare">Enter the date</label>
             <input type="datetime-local" max="2020" class="form-control" id="dateOfBirth" ng-model-options="{timezone: 'utc'}" ng-model="fare.Date" name="dateOfBirth" placeholder="Enter date" required>
         </div>
-        <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+        <button type="submit" class="btn btn-outline-dark" id="submitButton">Submit</button>
     </form>
 </div>
 

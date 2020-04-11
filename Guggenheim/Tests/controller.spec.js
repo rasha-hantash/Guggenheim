@@ -6,10 +6,10 @@ describe("SubmitFareController", function () {
         // Set up the mock http service responses
         $httpBackend = $injector.get('$httpBackend');
 
-        // Get hold of a scope (i.e. the root scope)
+        // Get hold of a scope (i.e. the root scope) 
         $rootScope = $injector.get('$rootScope');
         // The $controller service is used to create instances of controllers
-        var $controller = $injector.get('$controller');
+        let $controller = $injector.get('$controller');
 
         createController = function () {
             return $controller('SubmitFareController', { '$scope': $rootScope });
@@ -22,8 +22,13 @@ describe("SubmitFareController", function () {
        $httpBackend.verifyNoOutstandingRequest();
     });
 
+    // A simple test to verify the controller is defined
+    it('should exist', function () {
+        expect($rootScope).toBeDefined();
+    });
+
     it('should submit a fare and get back the total fare', function () {
-        var controller = createController();
+        let controller = createController();
         $rootScope.fare = {};
             $rootScope.fare = 
                 {
@@ -38,7 +43,7 @@ describe("SubmitFareController", function () {
 
         // the controller will still send the request and
         // $httpBackend will respond without you having to
-        // specify the expectation and response for this request
+        // specify the expectation and response for this request 
         $httpBackend.expectPOST('/TaxiFare/SubmitFare', $rootScope.fare).respond(201,
             {StartFare: 3, Minutes: 2, Miles: 2, Date: '10/08/2010 5:30:00 PM', Total: '$9.75'});
 
@@ -48,8 +53,6 @@ describe("SubmitFareController", function () {
         $httpBackend.flush();
         expect($rootScope.fare.Total).toBe('$9.75');
     });
-
-
 
 
 });
