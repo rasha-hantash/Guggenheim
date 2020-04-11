@@ -1,46 +1,31 @@
-describe("SubmitFareController", function () {
-    //beforeEach(angular.mock.module('app')); //see if this is necessary    
-    beforeEach(angular.mock.module('Guggenheim.controllers'));
+﻿describe('Testing routes', function () {
+    beforeEach(module('MyApp'));
 
-    var $controller, $rootScope;
+    let location, route, rootScope;
 
-    beforeEach(inject(function (_$controller_) {
-        // The injector unwraps the underscores (_) from around the parameter names when matching  
-        $controller = _$controller_;
-        //$rootScope = _$rootScope_;  
-    }));
+    beforeEach(inject(
+        function (_$location_, _$route_, _$rootScope_) {
+            location = _$location_;
+            route = _$route_;
+            rootScope = _$rootScope_;
+        }));
 
-    beforeEach(inject(function ($rootScope) {
-        //new a $scope
-        $scope = $rootScope.$new();
-        controller = $controller('SubmitFareController', { $scope: $scope });
-    }));
+    describe('/ route', function () {
+        beforeEach(inject(
+            function ($httpBackend) {
+                $httpBackend.expectGET('Templates/SubmitFare.html')
+                    .respond(200);
+            }));
 
-    describe('$scope.SubmitFare', function () {
-        it('uses the testing example provided by Guggenheim', function () {
-            $scope.fare = {};
-            $scope.fare = [
-                {
-                    StartFare: 3,
-                    Minutes: 2,
-                    Miles: 2,
-                    Date: "2002-02-02T14:02:00.000Z",
-                    Total: ""
-                }
-            ];
-            //spyOn($scope, 'submitFare');
-            $scope.SubmitFare($scope);
-           
+        it('should load the submit fare page on successful load of /', function () {
 
+            expect(route.current).toBeUndefined();
+            location.path('/');
+            rootScope.$digest();
 
-            
-            expect($scope.TotalFare).toEqual('$7.70');
-        });
+            expect(route.current.templateUrl).toBe('Templates/SubmitFare.html');
+            expect(route.current.controller).toBe('SubmitFareController');
 
-        it('exists', function () {
-            expect(controller).not.toBeNull();
         });
     });
-
 });
-

@@ -25,8 +25,12 @@ namespace Guggenheim.Tests.Controllers
             fare.Minutes = 5; //miles above 6pmh or 0
             fare.Date = "2010-10-08T17:30:00.000Z"; // +1.00
             fare.Total = "";
+
             var controller = new Guggenheim.Controllers.TaxiFareController();
             JsonResult result = controller.SubmitFare(fare) as JsonResult;
+
+            // convert out JsonResult into an IDictionary in order to easily access
+            // json data
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
@@ -49,8 +53,10 @@ namespace Guggenheim.Tests.Controllers
             fare.Minutes = 5; //miles above 6pmh or 1.75
             fare.Date = "2020-04-04T06:01:00.000Z"; //Edge case: 6:01 AM
             fare.Total = "";
+
             var controller = new Guggenheim.Controllers.TaxiFareController();
             JsonResult result = controller.SubmitFare(fare) as JsonResult;
+
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
@@ -72,13 +78,13 @@ namespace Guggenheim.Tests.Controllers
             fare.Minutes = 5; //miles above 6mph or 1.75
             fare.Date = "2020-04-04T11:31:00.000Z";//5:31 PM + 1 
             fare.Total = "";
+
             var controller = new Guggenheim.Controllers.TaxiFareController();
             JsonResult result = controller.SubmitFare(fare) as JsonResult;
+
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
-
-            //do a test for date that is displayed as well
         }
 
 
@@ -97,8 +103,10 @@ namespace Guggenheim.Tests.Controllers
             fare.Minutes = 0; //miles above 6pmh or 0
             fare.Date = "2020-04-04T11:30:00.000Z";
             fare.Total = "";
+
             var controller = new Guggenheim.Controllers.TaxiFareController();
             JsonResult result = controller.SubmitFare(fare) as JsonResult;
+
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
@@ -120,8 +128,11 @@ namespace Guggenheim.Tests.Controllers
             fare.Minutes = 5; //miles above 6pmh or 1.75
             fare.Date = "2020-04-04T11:30:00.000Z"; 
             fare.Total = "";
+
             var controller = new Guggenheim.Controllers.TaxiFareController();
             JsonResult result = controller.SubmitFare(fare) as JsonResult;
+
+            
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);
@@ -142,8 +153,10 @@ namespace Guggenheim.Tests.Controllers
             fare.Minutes = 0; //miles above 6pmh or 0
             fare.Date = "2020-04-04T11:30:00.000Z";
             fare.Total = "";
+
             var controller = new Guggenheim.Controllers.TaxiFareController();
             JsonResult result = controller.SubmitFare(fare) as JsonResult;
+
             IDictionary<string, object> data = new RouteValueDictionary(result.Data);
             Assert.AreEqual(ExpectedTotal, data["Total"]);
             Assert.AreEqual(ExpectedDate, data["Date"]);

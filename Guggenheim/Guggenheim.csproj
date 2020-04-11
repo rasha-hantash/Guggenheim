@@ -170,13 +170,14 @@
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular-route.js" />
-    <Content Include="Tests\app.spec.js" />
+    <Content Include="Tests\controller.spec.js" />
     <Content Include="App\controller.js" />
     <Content Include="karma.conf.js" />
     <Content Include="Tests\app.protractor.spec.js" />
     <Content Include="protractor.conf.js" />
     <Content Include="Templates\SubmitFare.html" />
     <Content Include="App\app.js" />
+    <Content Include="Tests\app.spec.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
