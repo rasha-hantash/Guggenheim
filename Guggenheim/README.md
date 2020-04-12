@@ -24,3 +24,7 @@ protractor protractor.conf.js
 ```
 
 To run unit tests open up the app in Visual Studio. Click on `Run` and then `Run Unit Tests`
+
+
+## Running the app
+Open up the app from Visual Studio. Select `Google Chrome` as your web browser and then run the project
