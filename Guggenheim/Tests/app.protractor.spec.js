@@ -15,7 +15,7 @@
         let alert = browser.switchTo().alert();
         alert.getText().then(function (message) {
             console.log("MSG is: " + message);
-            // check to see if expected value is recieve
+            // check to see if expected value is recieved  
             { expect(message.split(" ").splice(-1).toString()).toBe("$9.75") }
         });
         
@@ -25,3 +25,5 @@
 
 
 });
+
+// TODO: test for invalid values

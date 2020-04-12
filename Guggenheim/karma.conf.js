@@ -19,8 +19,7 @@ module.exports = function(config) {
       'node_modules/angular-mocks/angular-mocks.js',
       'Scripts/angular-route.js',
       'Tests/app.spec.js',
-      'Tests/controller.spec.js',
-      'App/*.js'
+      'App/app.js'
     ],
 
 
@@ -41,11 +40,11 @@ module.exports = function(config) {
     reporters: ['progress'],
 
 
-    // web server port
+    // web server port 
     port: 9876,
 
 
-    // enable / disable colors in the output (reporters and logs)
+    // enable / disable colors in the output (reporters and logs) 
     colors: true,
 
 

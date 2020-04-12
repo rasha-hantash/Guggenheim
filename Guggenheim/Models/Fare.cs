@@ -1,5 +1,4 @@
-﻿using System;
-namespace Guggenheim.Models
+﻿namespace Guggenheim.Models
 {
     public class Fare
     {

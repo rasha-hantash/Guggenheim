@@ -31,20 +31,16 @@ namespace Guggenheim.Controllers
 
 
 
-            // TODO: refactor into a method
-            // check for a night surcharge at PM
-            if (dateArr[2].Equals("PM") && hour >= 8)
+            
+            // check for a night surcharge
+            if ((dateArr[2].Equals("PM") && hour >= 8) || (dateArr[2].Equals("AM") && hour < 6))
             {
                 fare.StartFare += .50;
             }
 
-            // check for a night surcharge at AM
-            if (dateArr[2].Equals("AM") && hour < 6)
-            {
-                    fare.StartFare += .5;
-            }
+           
 
-            // adjust date format
+            // adjust date format according to wther or not month and day are single digits
             DateTime dtResult = DateTime.ParseExact(dateArr[0], "M/d/yyyy", CultureInfo.InvariantCulture);
             string s = dtResult.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
             dtResult = DateTime.ParseExact(s, "MM/dd/yyyy", CultureInfo.InvariantCulture);
