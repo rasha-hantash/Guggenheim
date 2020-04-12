@@ -1,7 +1,6 @@
-﻿// this service is injected into the SubmitFareController in order for
-// SubmiTaxiFare() to become accessbile to the SubmitFareController 
-var app = angular.module("GuggenheimApp", ['ngRoute']);
+﻿var app = angular.module("GuggenheimApp", ['ngRoute']);
 
+// render the correct html and controller to the specific  route
 app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
         .when("/", {
@@ -27,7 +26,8 @@ app.controller("SubmitFareController", function ($scope, $http) {
 
         // TODO: figure out why I'm still allowed to SubmitFare when user
         // enters a date with invalid Minutes and Miles values    
-        if ($scope.fare.Minutes == undefined || $scope.fare.Miles == undefined) {
+        if (($scope.fare.Minutes == undefined || $scope.fare.Minutes < 0)
+            || ($scope.fare.Miles == undefined || $scope.fare.Miles < 0)) {
             alert("Please enter a minimum value of 0 for Minutes and Miles");
             return;
         }
@@ -49,6 +49,7 @@ app.controller("SubmitFareController", function ($scope, $http) {
     };
 });
 
+// custom directive for the taxi fare form
 app.directive('submitform', function () {
         return {
             templateUrl: 'Templates/submitFare.html',

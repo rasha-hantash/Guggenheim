@@ -22,7 +22,7 @@
         $httpBackend.verifyNoOutstandingRequest();
     });
 
-    // A simple test to verify the controller is defined      
+    // A simple test to verify the controller is defined        
     it('should exist', function () {
         expect($rootScope).toBeDefined();
     });
@@ -38,7 +38,6 @@
             Date: "2002-02-02T14:02:00.000Z",
             Total: ""
         };
-        $rootScope.Total = "";
 
         // the controller will still send the request and
         // $httpBackend will respond without you having to
@@ -52,6 +51,25 @@
         //preserves the async api of the backend, while allowing the test to execute synchronously.
         $httpBackend.flush();
         expect($rootScope.fare.Total).toBe('$9.75');
+    });
+
+
+    it('should not allow a user to input negative values for Miles or Minutes', function () {
+        let controller = createController();
+        $rootScope.fare = {};
+        $rootScope.fare =
+        {
+            StartFare: 3,
+            Minutes: -1,
+            Miles: -1,
+            Date: "2002-02-02T14:02:00.000Z",
+            Total: ""
+        };
+
+        $rootScope.SubmitFare();
+
+        expect($rootScope.fare.Total).toBe('');
+        //preserves the async api of the backend, while allowing the test to execute synchronously.
     });
 
 
